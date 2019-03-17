@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#"></a>
+        <img class="ftbrand-image" id="brand-image" alt="" src="" />
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+              <a class="nav-link" routerLink="/">RecipeBook</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" routerLink="/recipes">Recipes</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/cart">Shopping List</a>
+            </li>
+            <form class="form-inline my-4 my-lg-0 search-form" method="GET" action="">
+              <div class="input-group">
+                <input class="form-control" type="text" name="q" placeholder="Search by name, desc or price"
+                       aria-label="Search" value="">
+                <span class='input-group-btn'>
+                  <button class="btn btn-outline-secondary" type="submit">Search</button>
+                </span>
+              </div>
+            </form>        
+          </ul>
+          <ul class="nav navbar-nav navbar-right">   
+              <ng-template [ngIf]="!(authState | async).authenticated" >
+                  <li class="nav-item">
+                      <a class="nav-link" style="cursor: pointer;" routerLink="/signup"> Register</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" style="cursor: pointer;" routerLink="/signin"> Login</a>
+                  </li>
+              </ng-template>           
+              <ng-template [ngIf]="(authState | async).authenticated">
+                  <li class="nav-item">
+                      <a class="nav-link" style="cursor: pointer;" (click)="onLogOut()">Logout</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" style="cursor: pointer;" (click)="onSaveRecipe()">Save Data</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" style="cursor: pointer;" (click)="onFetchData()">Fetch Data</a>
+                  </li>
+              </ng-template>
+               <!-- <li class="nav-item">
+                 <a class="nav-link" href="#">Register</a>
+               </li>              -->
+            </ul>
+        </div>
+</nav>    
+</body>
+</html>
+
+

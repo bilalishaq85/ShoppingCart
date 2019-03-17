@@ -1,0 +1,13 @@
+
+<a 
+    class="card flex-md-row mb-4 shadow-sm h-md-250" 
+    [routerLink]="[index]"
+>
+    <div class="card-body d-flex flex-column align-items-start">
+      <h3 class="mb-0" >
+          <h4 class="text-dark">{{ recipe.name }}</h4>
+      </h3>
+      <p class="card-text mb-auto">{{ recipe.description }}</p>                
+    </div>
+    <img class="card-img-right" src="{{ recipe.imagePath}}" style="max-height: 100px;">
+</a>

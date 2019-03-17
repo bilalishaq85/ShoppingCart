@@ -1,0 +1,19 @@
+body {
+    padding-top: 57px;
+    padding-bottom: 80px;
+  }
+  
+  .navbar {
+    margin-bottom: 80px;
+    background-color: white;
+  }
+  
+  .ftbrand-image {
+    height:40px;
+    width:40px;
+  }
+  
+  .form-inline .form-control{
+     width:500px;
+  }
+  
